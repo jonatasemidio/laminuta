@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laminuta
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: laminuta
+  template:
+    metadata:
+      labels:
+        app: laminuta
+    spec:
+      containers:
+        - name: laminuta
+          image: jonatasemidio/laminuta
+          ports:
+            - containerPort: 8080
